@@ -112,7 +112,7 @@ function InjectedComponent() {
     const result = await res.json();
     return (
       result.candidates?.[0]?.content?.parts?.[0]?.text ||
-      "No response from AI."
+      "please enter your Api key first."
     );
   };
 
