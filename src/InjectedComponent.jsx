@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { el } from "./Content";
 
 function InjectedComponent() {
   const [isChatOpen, setIsChatOpen] = useState(true);
@@ -6,6 +7,11 @@ function InjectedComponent() {
   const [inputValue, setInputValue] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const chatContainerRef = useRef(null);
+  if (el) {
+    console.log("Element found:", el.innerText);
+  } else {
+    console.log("Element not found.");
+  }
   const getApiKey = () => {
     return new Promise((resolve) => {
       chrome.storage.local.get("openai_api_key", (result) => {
@@ -13,8 +19,6 @@ function InjectedComponent() {
       });
     });
   };
-
-  // const api = import.meta.env.VITE_API;
 
   const toggleChatbox = () => setIsChatOpen((prev) => !prev);
 
@@ -129,6 +133,7 @@ function InjectedComponent() {
     return segments;
   };
 
+
   return (
     <>
       {isChatOpen && (
@@ -155,12 +160,11 @@ function InjectedComponent() {
           {/* Header */}
           <div
             style={{
-              color: "#ffffff",
+              color: "#E62E43",
               padding: "0rem 1rem",
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
-              background: "linear-gradient(to right, #dc2626, #F12773 )",
             }}
           >
             <p
@@ -178,8 +182,6 @@ function InjectedComponent() {
                     "chatHistory",
                     JSON.stringify(clearedMessages)
                   );
-
-                  // Optional: ensure brief-mode prompt is still saved in hiddenPrompt
                   chrome.storage.local.set({
                     hiddenPrompt: [
                       {
@@ -190,12 +192,12 @@ function InjectedComponent() {
                   });
                 }}
                 style={{
-                  background: "#27200df2",
+                  background: "#E62E43",
                   color: "white",
                   border: "none",
-                  padding: "6px 12px",
+                  padding: "4px 10px",
                   borderRadius: "6px",
-                  marginRight: "10px",
+                  marginRight: "14px",
                   cursor: "pointer",
                 }}
               >
@@ -289,7 +291,6 @@ function InjectedComponent() {
               display: "flex",
               borderTop: "1px solid #e5e7eb",
               padding: "8px",
-              background: "linear-gradient(to right,#dc2626, #F12773 )",
             }}
           >
             <textarea
@@ -301,7 +302,7 @@ function InjectedComponent() {
                 borderRadius: "6px 0 0 6px",
                 outline: "none",
                 color: "white",
-                background: "#303030",
+                background: "#30303010",
                 border: "1px solid rgba(255, 255, 255, 0.2)",
                 resize: "none",
                 overflowY: "auto",

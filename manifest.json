@@ -5,11 +5,12 @@
   "description": "A Chrome extension to interact with OpenAI using your API key.",
   "permissions": ["storage"],
   "action": {
-    "default_popup": "index.html"
+    "default_popup": "index.html",
+    "default_icon" : "final.png"
   },
   "content_scripts": [
     {
-      "js": ["src/Content.tsx"],
+      "js": ["src/Content.jsx"],
       "matches": ["*://leetcode.com/*", "*://www.leetcode.com/*"]
     }
   ],

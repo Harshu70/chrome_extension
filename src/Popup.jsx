@@ -5,7 +5,6 @@ const Popup = () => {
   const [showSuccess, setShowSuccess] = useState(false);
 
   useEffect(() => {
-    // Check if API key is already saved
     chrome.storage.local.get("openai_api_key", (data) => {
       if (data.openai_api_key) {
         setShowSuccess(true);

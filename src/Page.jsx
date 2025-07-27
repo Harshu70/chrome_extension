@@ -1,28 +1,26 @@
-import React, { useRef, useState } from 'react'
-import ReactDOM from 'react-dom';
-import { createRoot } from 'react-dom/client';
-import InjectedComponent from './InjectedComponent';
+import React, { useRef, useState } from "react";
+import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
+import InjectedComponent from "./InjectedComponent";
 
 function Page() {
-  const [isVisible, setIsVisible] = useState(false); // Track visibility
-  const containerRef = useRef(null); // Persistent reference for container
-  const rootRef = useRef(null); // Persistent reference for root
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef(null);
+  const rootRef = useRef(null);
 
   const handleClick = () => {
     if (isVisible) {
-      // Hide the component if visible
       if (rootRef.current) {
-        rootRef.current.unmount(); // Unmount the component
-        rootRef.current = null; // Clear the root reference
+        rootRef.current.unmount();
+        rootRef.current = null;
       }
       if (containerRef.current) {
-        containerRef.current.remove(); // Remove the container
-        containerRef.current = null; // Clear the container reference
+        containerRef.current.remove();
+        containerRef.current = null;
       }
     } else {
-      // Show the component if not visible
-      const container = document.createElement('div');
-      container.id = 'dynamic-react-root';
+      const container = document.createElement("div");
+      container.id = "dynamic-react-root";
       document.body.appendChild(container);
       containerRef.current = container;
 
@@ -31,22 +29,41 @@ function Page() {
       root.render(<InjectedComponent />);
     }
 
-    setIsVisible(!isVisible); // Toggle visibility state
+    setIsVisible(!isVisible);
   };
   return (
-    <button
-    style=
-    {{  backgroundColor: "#FBCFE8",
-        color: "red",
-        position: "fixed",
-        bottom: "50px",
-        right: "30px",
-        fontSize: "30px"
-     }}
-     className="fixed "
-    onClick={handleClick}
-    >Page</button>
-  )
+    <>
+      {/* <button
+        style={{
+          backgroundColor: "#FBCFE8",
+          color: "red",
+          position: "fixed",
+          bottom: "50px",
+          right: "30px",
+          fontSize: "30px",
+        }}
+        className="fixed "
+        onClick={handleClick}
+      >
+        Page
+      </button> */}
+      <button
+      style={{
+          // backgroundColor: "#FBCFE8",
+          // color: "red",
+          position: "fixed",
+          bottom: "50px",
+          right: "30px",
+          fontSize: "30px",
+          height:"55px",
+          width:"45px"
+        }}
+      onClick={handleClick}>
+        <img
+        src="https://res.cloudinary.com/dzoozzolx/image/upload/v1752932390/final_ynhe9y.png" alt="icon" />
+      </button>
+    </>
+  );
 }
 
-export default Page
+export default Page;
