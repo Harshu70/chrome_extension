@@ -1,8 +1,48 @@
-# React + Vite
+# 💬 AI Chat Chrome Extension
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Chrome extension that adds a floating AI-powered chatbot to any website. Built using **React.js (via Vite)** and powered by the **Gemini API**, this extension allows users to interact with an AI assistant seamlessly while browsing.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
+
+- 🧠 Ask AI questions from any webpage using a floating chatbot interface
+- 🔄 "New Chat" button resets conversation context
+- 💾 Stores conversation in `chrome.storage` or `localStorage` for session persistence
+- ⚙️ Easily extendable and lightweight
+
+---
+
+## 🛠️ Tech Stack / Tools Used
+
+- **React.js** (via Vite) – Frontend framework
+- **JavaScript**
+- **Chrome Extensions API (Manifest V3)**
+- **Gemini API** – for AI responses
+- **Chrome Storage API / localStorage**
+- **HTML & CSS**
+
+---
+
+## 📸 Screenshots
+
+![Chat Floating Button](./public/final.png)
+![Chat Interface](./screenshots/chat-interface.png)
+
+> *(Add your own screenshots in a `screenshots/` folder and update links)*
+
+---
+
+## 🎥 Demo
+
+- [📽️ Watch Demo Video](https://drive.google.com/your-demo-link-here)
+- [📦 GitHub Repository](https://github.com/Harshu70/ai-chat-extension)
+
+---
+
+## 🧪 How to Install (Manually)
+
+1. Clone or download this repository:
+
+```bash
+git clone https://github.com/yourusername/ai-chat-extension.git
