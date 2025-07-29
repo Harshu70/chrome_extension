@@ -26,9 +26,10 @@ A Chrome extension that adds a floating AI-powered chatbot to any website. Built
 
 ## 📸 Screenshots
 
-![Chat Floating Button](./public/final.png)
-![Chat Interface](./screenshots/chat-interface.png)
-
+![Chat Floating Button](./scrrenshot/sc1.png)
+![Chat Interface](./scrrenshot/sc2.png)
+![Chat Interface](./scrrenshot/sc3.png)
+![Chat Interface](./scrrenshot/sc4.png)
 > *(Add your own screenshots in a `screenshots/` folder and update links)*
 
 ---
