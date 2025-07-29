@@ -34,11 +34,6 @@ A Chrome extension that adds a floating AI-powered chatbot to any website. Built
 
 ---
 
-## 🎥 Demo
-
-- [📽️ Watch Demo Video](https://drive.google.com/your-demo-link-here)
-- [📦 GitHub Repository](https://github.com/Harshu70/ai-chat-extension)
-
 ---
 
 ## 🧪 How to Install (Manually)
